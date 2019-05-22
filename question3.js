@@ -35,9 +35,6 @@ const hexToRGB = hex => {
     return `rgb(${red}, ${green}, ${blue})`;
 }
 
-console.log(`${hex1}: ${hexToRGB(hex1)}`);
-console.log(`${hex2}: ${hexToRGB(hex2)}`);
-
 rgbToHex = rgb => {
     let red = '';
     let green = '';
@@ -100,5 +97,19 @@ rgbToHex = rgb => {
     return `#${red}${green}${blue}`;
 }
 
-console.log(`${rgb1}: ${rgbToHex(rgb1)}`);
-console.log(`${rgb2}: ${rgbToHex(rgb2)}`);
+const convertColorsHexOrRgb = str => {
+    if (str[0] === '#') {
+        return hexToRGB(str);
+    }
+    else if (str.slice(0, 3) === 'rgb') {
+        return rgbToHex(str);
+    }
+    else {
+        return `Please enter a HEX or RGB value.`;
+    }
+}
+
+console.log(convertColorsHexOrRgb(hex1));
+console.log(convertColorsHexOrRgb(hex2));
+console.log(convertColorsHexOrRgb(rgb1));
+console.log(convertColorsHexOrRgb(rgb2));
