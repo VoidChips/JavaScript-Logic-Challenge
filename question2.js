@@ -1,4 +1,4 @@
-exampleArray = [1, 4, 7, 23, 5, 9];
+const exampleArray = [1, 4, 7, 23, 5, 9];
 
 const sumsToTarget = (arr, target) => {
     for (let i = 0; i < (arr.length - 1); i++) { // i stays the same while j is less than the array length
